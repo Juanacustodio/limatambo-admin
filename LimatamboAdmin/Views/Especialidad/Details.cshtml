@@ -1,0 +1,51 @@
+﻿@model LimatamboAdmin.Models.Especialidad
+
+@{
+    ViewBag.Title = @Html.DisplayFor(model => model.nombre);
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink("Especialidades", "Index")
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+    </ol>
+</nav>
+
+<h2 class="title">
+    @Html.DisplayFor(model => model.nombre)
+    <a class="btn btn-info btn-detail-edit" href="@Url.Action("Edit", new { id = Model.ID })">
+        <i class="fas fa-pen"></i>
+    </a>
+</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagenVector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagenVector)
+        </dd>
+
+    </dl>
+</div>

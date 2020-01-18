@@ -20,6 +20,9 @@ namespace LimatamboAdmin.DAL
         public DbSet<Sede> Sede { get; set; }
         public DbSet<Medico> Medicos { get; set; }
 
+
+        public DbSet<Admin> Admin { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

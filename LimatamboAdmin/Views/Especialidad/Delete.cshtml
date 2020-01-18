@@ -1,12 +1,12 @@
-﻿@model LimatamboAdmin.Models.Sede
+﻿@model LimatamboAdmin.Models.Especialidad
 
 @{
     ViewBag.Title = "Eliminar";
 }
 
-    <h2 class="title">Eliminar Sede</h2>
+    <h2 class="title">Eliminar @Html.Raw(LimatamboAdmin.Models.Especialidad.getNombre())</h2>
 
-<h3>¿Eliminar el registro?</h3>
+    <h3>¿Eliminar el registro?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -19,19 +19,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.direccion)
+            @Html.DisplayNameFor(model => model.imagen)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.direccion)
+            @Html.DisplayFor(model => model.imagen)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.telefono)
+            @Html.DisplayNameFor(model => model.imagenVector)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.telefono)
+            @Html.DisplayFor(model => model.imagenVector)
         </dd>
 
     </dl>

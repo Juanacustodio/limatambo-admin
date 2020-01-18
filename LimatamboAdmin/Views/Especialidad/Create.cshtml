@@ -1,19 +1,20 @@
-﻿@model LimatamboAdmin.Models.Sede
+﻿@model LimatamboAdmin.Models.Especialidad
 
 @{
-    ViewBag.Title = "Nueva Sede";
+    ViewBag.Title = "Nueva " + LimatamboAdmin.Models.Especialidad.getNombre();
 }
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                @Html.ActionLink("Sedes", "Index")
+                @Html.ActionLink("Especialidades", "Index")
             </li>
             <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
         </ol>
     </nav>
 
-    <h2 class="title">Nueva Sede</h2>
+    <h2 class="title">Nueva Especialidad</h2>
+
 
 @using (Html.BeginForm()) 
 {
@@ -31,24 +32,24 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.imagen, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.imagen, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.imagen, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.imagenVector, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.imagenVector, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.imagenVector, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10 text-right">
-                <input type="submit" value="Crear" class="btn btn-success" />
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success" />
             </div>
         </div>
     </div>

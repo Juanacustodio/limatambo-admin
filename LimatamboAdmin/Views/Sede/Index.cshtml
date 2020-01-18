@@ -1,16 +1,19 @@
 ﻿@model IEnumerable<LimatamboAdmin.Models.Sede>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sedes";
 }
 
-<h2>Index</h2>
+<h2 class="title">Sedes</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="content-btn-add">
+    <a class="btn btn-success" href="@Url.Action("Create")">
+        Nueva Sede 
+        <i class="fas fa-plus"></i>
+    </a>
 </p>
 <table class="table">
-    <tr>
+    <tr class="table-header">
         <th>
             @Html.DisplayNameFor(model => model.ID)
         </th>
@@ -41,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.telefono)
         </td>
         <td>
-            <a class="btn btn-success" href="@Url.Action("Edit", new { id = item.ID })">
+            <a class="btn btn-info" href="@Url.Action("Edit", new { id = item.ID })">
                 <i class="fas fa-pen"></i>
             </a>
             <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.ID })">

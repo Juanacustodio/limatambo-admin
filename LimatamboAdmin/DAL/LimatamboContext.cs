@@ -29,5 +29,7 @@ namespace LimatamboAdmin.DAL
         }
 
         public System.Data.Entity.DbSet<LimatamboAdmin.Models.Consultorio> Consultorios { get; set; }
+
+        public System.Data.Entity.DbSet<LimatamboAdmin.Models.Paciente> Pacientes { get; set; }
     }
 }

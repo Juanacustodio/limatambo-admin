@@ -1,19 +1,20 @@
-﻿@model LimatamboAdmin.Models.Consultorio
+﻿@model LimatamboAdmin.Models.Paciente
 
 @{
-    ViewBag.Title = "Editar" + LimatamboAdmin.Models.Consultorio.tituloPlural;
+    ViewBag.Title = "Editar" + LimatamboAdmin.Models.Paciente.tituloPlural;
 }
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            @Html.ActionLink("Consultorios", "Index")
+            @Html.ActionLink("Pacientes", "Index")
         </li>
         <li class="breadcrumb-item active" aria-current="page">Editar</li>
     </ol>
 </nav>
 
-<h2 class="title">Editar @Html.Raw(LimatamboAdmin.Models.Consultorio.titulo)</h2>
+<h2 class="title">Editar @Html.Raw(LimatamboAdmin.Models.Paciente.titulo)</h2>
+
 
 @using (Html.BeginForm())
 {
@@ -33,18 +34,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.piso, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.apellido, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.piso, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.piso, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.apellido, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idEspecialidadPorSede, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idSeguro, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.idEspecialidadPorSede, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.idEspecialidadPorSede, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.idSeguro, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.idSeguro, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -55,7 +56,6 @@
         </div>
     </div>
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

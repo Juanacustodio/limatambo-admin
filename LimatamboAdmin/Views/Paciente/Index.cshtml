@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LimatamboAdmin.Models.Paciente>
+
+@{
+    ViewBag.Title = LimatamboAdmin.Models.Paciente.tituloPlural;
+}
+
+<h2 class="title">@Html.Raw(LimatamboAdmin.Models.Paciente.tituloPlural)</h2>
+
+<p class="content-btn-add">
+    <a class="btn btn-success" href="@Url.Action("Create")">
+        Nueva @Html.Raw(LimatamboAdmin.Models.Paciente.titulo)
+        <i class="fas fa-plus"></i>
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idSeguro)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(@Html.DisplayFor(modelItem => item.ID).ToString(), "Details", new { id = item.ID })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idSeguro)
+            </td>
+            <td>
+                <a class="btn btn-info" href="@Url.Action("Edit", new { id=item.ID })">
+                    <i class="fas fa-pen"></i>
+                </a>
+                <a class="btn btn-danger" href="@Url.Action("Delete", new { id=item.ID })">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

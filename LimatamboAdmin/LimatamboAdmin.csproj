@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConsultorioController.cs" />
     <Compile Include="Controllers\EspecialidadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SedeController.cs" />
@@ -237,6 +238,11 @@
     <Content Include="Views\Especialidad\Details.cshtml" />
     <Content Include="Views\Especialidad\Edit.cshtml" />
     <Content Include="Views\Especialidad\Index.cshtml" />
+    <Content Include="Views\Consultorio\Create.cshtml" />
+    <Content Include="Views\Consultorio\Delete.cshtml" />
+    <Content Include="Views\Consultorio\Details.cshtml" />
+    <Content Include="Views\Consultorio\Edit.cshtml" />
+    <Content Include="Views\Consultorio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

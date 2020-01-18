@@ -27,5 +27,7 @@ namespace LimatamboAdmin.DAL
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<LimatamboAdmin.Models.Consultorio> Consultorios { get; set; }
     }
 }

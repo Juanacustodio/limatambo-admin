@@ -20,39 +20,45 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">
-                        Inicio
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Dashboard">
-                        Dashboard
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Contenido
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="@Url.Action("Index", "Sede")">
-                            Sedes
+                @if (Session["admin"] != null)
+                {
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">
+                            Inicio
+                            <span class="sr-only">(current)</span>
                         </a>
-                        <a class="dropdown-item" href="@Url.Action("Index", "Especialidad")">
-                            Especialidades
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Dashboard">
+                            Dashboard
                         </a>
-                        <a class="dropdown-item" href="@Url.Action("Index", "Medico")">
-                            Medicos
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contenido
                         </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Admin</a>
-                    </div>
-                </li>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Sede")">
+                                Sedes
+                            </a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Especialidad")">
+                                Especialidades
+                            </a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Medico")">
+                                Medicos
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Admin</a>
+                        </div>
+                    </li>
+                }
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Cerrar sessión</button>
-            </form>
+            @if (Session["admin"] != null)
+            {
+                <form action="@Url.Action("Salir", "Home")" class="form-inline my-2 my-lg-0">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Cerrar sessión</button>
+                </form>
+            }
         </div>
     </nav>
 

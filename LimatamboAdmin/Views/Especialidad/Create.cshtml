@@ -1,7 +1,7 @@
 ﻿@model LimatamboAdmin.Models.Especialidad
 
 @{
-    ViewBag.Title = "Nueva " + LimatamboAdmin.Models.Especialidad.getNombre();
+    ViewBag.Title = "Nueva " + LimatamboAdmin.Models.Especialidad.titulo;
 }
 
     <nav aria-label="breadcrumb">
@@ -13,7 +13,7 @@
         </ol>
     </nav>
 
-    <h2 class="title">Nueva Especialidad</h2>
+    <h2 class="title">Nueva @Html.Raw(LimatamboAdmin.Models.Especialidad.titulo)</h2>
 
 
 @using (Html.BeginForm()) 

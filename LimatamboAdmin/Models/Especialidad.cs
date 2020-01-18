@@ -7,15 +7,9 @@ namespace LimatamboAdmin.Models
 {
     public class Especialidad
     {
-        static public string getNombre()
-        {
-            return "Especialidad";
-        }
+        static public string titulo = "Especialidad";
+        static public string tituloPlural = "Especialidades";
 
-        static public string getNombrePlural()
-        {
-            return "Especialidades";
-        }
         public int ID { get; set; }
         public string nombre { get; set; }
         public string imagen { get; set; }

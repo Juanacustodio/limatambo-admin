@@ -37,6 +37,12 @@ namespace LimatamboAdmin.Controllers
             return RedirectToAction("Dashboard");
         }
 
+        public ActionResult Salir()
+        {
+            Session.Remove("admin");
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Dashboard()
         {
             return View();

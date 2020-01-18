@@ -1,0 +1,42 @@
+﻿@model LimatamboAdmin.Models.Consultorio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consultorio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.piso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.piso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idEspecialidadPorSede)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idEspecialidadPorSede)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

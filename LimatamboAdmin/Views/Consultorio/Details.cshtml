@@ -1,13 +1,26 @@
 ﻿@model LimatamboAdmin.Models.Consultorio
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Html.DisplayFor(model => model.nombre);
 }
 
-<h2>Details</h2>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink("Consultorios", "Index")
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+    </ol>
+</nav>
+
+<h2 class="title">
+    @Html.DisplayFor(model => model.nombre)
+    <a class="btn btn-info btn-detail-edit" href="@Url.Action("Edit", new { id = Model.ID })">
+        <i class="fas fa-pen"></i>
+    </a>
+</h2>
 
 <div>
-    <h4>Consultorio</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -27,7 +40,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.idEspecialidadPorSede)
+            @Html.DisplayNameFor(model => model.especialidadPorSede.sede.nombre) - @Html.DisplayNameFor(model => model.especialidadPorSede.especialidad.nombre)
         </dt>
 
         <dd>
@@ -36,7 +49,3 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
